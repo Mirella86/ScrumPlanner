@@ -1,0 +1,61 @@
+﻿@using System.Linq
+@using Microsoft.Ajax.Utilities
+@model IEnumerable<ScrumUI.Task>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.Name("Estimated")
+        </th>
+        <th>
+            @Html.Name("Resource")
+        </th>
+        <th>
+            @Html.Name("Possible time")
+        </th>
+        <th>
+            @Html.Name("Possible delay")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        var fullName = string.Empty;
+        if (@item.Resource != null)
+        {
+            fullName = item.Resource.FirstName +" "+ item.Resource.LastName;
+        }
+        var delay = item.RealHours - item.EstimatedHours;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedHours)
+            </td>
+            <td>@if (@item.Resource != null)
+                {
+                @Html.ActionLink(fullName, "Details", "Resource", new { area = "", id = item.Resource.ResourceId.ToString() }, null)
+                }  </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RealHours)
+            </td>
+            <td>
+                @delay
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Task", new { area = "", id = item.TaskId }, null) |
+            @Html.ActionLink("Details", "Details", "Task", new { area = "", id = item.TaskId }, null) |
+            @Html.ActionLink("Delete", "Delete", "Task", new { area = "", id = item.TaskId }, null)
+            </td>
+        </tr>
+    }
+
+</table>

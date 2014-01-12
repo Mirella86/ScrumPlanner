@@ -1,0 +1,57 @@
+﻿@model ScrumUI.Task
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Task</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserStory.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserStory.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstimatedHours)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstimatedHours)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Resource.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Resource.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RealHours)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RealHours)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TaskId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

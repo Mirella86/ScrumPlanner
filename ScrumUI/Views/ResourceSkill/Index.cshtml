@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ScrumUI.ResourceSkill>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("New Resource Skill", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Skill.SkillName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resource.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillValue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.OrderBy(item=>item.Resource.ResourceId)) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Skill.SkillName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resource.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkillValue)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.ResourceSkillID  }) @*  |
+           @Html.ActionLink("Details", "Details", new {id=item.ResourceSkillID}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ResourceSkillID })*@
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Sprint Planner</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionLink("Sprint Planner", "Index", "UserStory")</p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("User stories", "Index", "UserStory")</li>
+                        <li>@Html.ActionLink("Tasks", "Index", "Task")</li>
+                        <li>@Html.ActionLink("Resources", "Index", "Resource")</li>
+                        <li>@Html.ActionLink("Skills", "Index", "Skill")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+
+                <p class="paragraph_legend">
+                    <span style="font-weight: bold">Legend:</span>
+                    <br />
+                    Skills can have values between -5 and 5.
+                <br />
+                    Use positive numbers for skill that improve developer speed and negative for skills that obstruct it.
+                <br />
+                    Skill weights can have values between 1 and 5. 
+                <br />
+                    The biggest the number, the higher the impact of the skill on the developer programming speed. 
+                </p>
+                <br />
+
+                <p>&copy; @DateTime.Now.Year - Mirela Ciofu</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

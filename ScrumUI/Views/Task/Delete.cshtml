@@ -1,0 +1,61 @@
+﻿@model ScrumUI.Task
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Task</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserStory.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserStory.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EstimatedHours)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EstimatedHours)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Resource.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Resource.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.RealHours)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RealHours)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

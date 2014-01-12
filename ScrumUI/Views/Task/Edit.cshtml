@@ -1,0 +1,79 @@
+﻿@model ScrumUI.Task
+
+@{
+    ViewBag.Title = "Edit";
+}
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/Scripts.js"></script>
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Task</legend>
+
+        @Html.HiddenFor(model => model.TaskId)
+        @Html.HiddenFor(model => model.UserStoryId);
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserStoryId, "UserStory")
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model=> model.UserStory.Title)
+            @Html.ValidationMessageFor(model => model.UserStoryId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EstimatedHours)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EstimatedHours)
+            @Html.ValidationMessageFor(model => model.EstimatedHours)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AssignedTo, "Resource")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("AssignedTo", String.Empty)
+            @Html.ValidationMessageFor(model => model.AssignedTo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RealHours)
+        </div>
+        <div class="editor-field" id="realHours">
+            @Html.DisplayFor(model => model.RealHours)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

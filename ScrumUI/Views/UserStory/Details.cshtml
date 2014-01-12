@@ -1,0 +1,33 @@
+﻿@model ScrumUI.UserStory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UserStory</legend>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+    <br />
+    <div class="display-label">
+        @Html.LabelFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+        @Html.Partial("_TasksForUserStory", Model.Tasks)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserStoryId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

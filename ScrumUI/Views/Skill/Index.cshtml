@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ScrumUI.Skill>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Skills</h2>
+
+<p>
+    @Html.ActionLink("New Skill", "Create")
+</p>
+<table>
+    <tr>
+        <th style="width: 30%">
+            @Html.Name("Skill")
+        </th>
+        <th style="width: 20%">
+            @Html.Name("Weight")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkillName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SkillWeight)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SkillID }) |
+      @*      @Html.ActionLink("Details", "Details", new { id=item.SkillID }) | *@
+            @Html.ActionLink("Delete", "Delete", new { id=item.SkillID })
+        </td>
+    </tr>
+}
+
+</table>

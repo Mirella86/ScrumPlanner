@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="14105a2ab9a7415ea77c6ccce870ea1b" Name="Diagram1">
+        <EntityTypeShape EntityType="ScrumModel.Resource" Width="1.5" PointX="7.75" PointY="12.375" />
+        <EntityTypeShape EntityType="ScrumModel.ResourceSkill" Width="1.5" PointX="10.165110400954779" PointY="13.970060921260185" />
+        <EntityTypeShape EntityType="ScrumModel.Skill" Width="1.5" PointX="4.8289831806109209" PointY="12.008684745062462" />
+        <EntityTypeShape EntityType="ScrumModel.sysdiagram" Width="1.5" PointX="9.2681454742644664" PointY="7.6446708178355687" />
+        <EntityTypeShape EntityType="ScrumModel.Task" Width="1.5" PointX="1.516492613366103" PointY="13.810965395444523" />
+        <EntityTypeShape EntityType="ScrumModel.UserStory" Width="1.5" PointX="3.1614706326096647" PointY="19.755307773014209" />
+        <AssociationConnector Association="ScrumModel.FK_ResourceSkills_Resource" />
+        <AssociationConnector Association="ScrumModel.FK_Task_Resource" />
+        <AssociationConnector Association="ScrumModel.FK_ResourceSkills_Skill" />
+        <AssociationConnector Association="ScrumModel.FK_Task_UserStory" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

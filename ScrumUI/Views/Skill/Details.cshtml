@@ -1,0 +1,29 @@
+﻿@model ScrumUI.Skill
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Skill</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SkillName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SkillName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SkillWeight)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SkillWeight)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.SkillID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,255 @@
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ScrumUI.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ScrumUI.pdb
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Antlr3.Runtime.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.AspNet.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.Core.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\EntityFramework.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Microsoft.Data.Edm.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Microsoft.Data.OData.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Microsoft.Web.Infrastructure.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Microsoft.Web.WebPages.OAuth.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Newtonsoft.Json.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Net.Http.Formatting.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Spatial.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Helpers.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Http.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Http.OData.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Http.WebHost.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Mvc.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Optimization.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Razor.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Deployment.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Razor.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\WebGrease.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\WebMatrix.Data.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\WebMatrix.WebData.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\EntityFramework.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Newtonsoft.Json.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Net.Http.Formatting.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Helpers.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Http.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Http.WebHost.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Mvc.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Razor.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Deployment.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Razor.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\WebMatrix.Data.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Microsoft.Web.WebPages.OAuth.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\WebMatrix.WebData.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.AspNet.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.Core.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Web.Http.OData.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Microsoft.Data.Edm.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\Microsoft.Data.OData.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\System.Spatial.xml
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\de\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\es\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\it\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\de\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\es\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\fr\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\it\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ja\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ko\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\ru\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\zh-Hans\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\bin\zh-Hant\System.Spatial.resources.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.csprojResolveAssemblyReference.cache
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.dll
+D:\Self study - training\Projects\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.pdb
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ScrumUI.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ScrumUI.pdb
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Antlr3.Runtime.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.Core.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\EntityFramework.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Data.Edm.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Data.OData.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Newtonsoft.Json.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Net.Http.Formatting.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Spatial.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Helpers.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.OData.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.WebHost.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Mvc.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Optimization.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Razor.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Deployment.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Razor.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\WebGrease.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\WebMatrix.Data.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\WebMatrix.WebData.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\EntityFramework.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Newtonsoft.Json.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Net.Http.Formatting.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Helpers.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.WebHost.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Mvc.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Razor.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Deployment.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Razor.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\WebMatrix.Data.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\WebMatrix.WebData.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.Core.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.OData.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Data.Edm.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Data.OData.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\System.Spatial.xml
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\de\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\es\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\fr\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\it\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ja\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ko\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\ru\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.dll
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.pdb
+C:\Users\mdascalu\Dropbox\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.csprojResolveAssemblyReference.cache
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ScrumUI.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ScrumUI.pdb
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Antlr3.Runtime.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.AspNet.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.Core.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.Consumer.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\EntityFramework.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Data.Edm.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Data.OData.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Web.Infrastructure.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Web.WebPages.OAuth.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Newtonsoft.Json.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Net.Http.Formatting.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Spatial.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Helpers.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.OData.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.WebHost.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Mvc.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Optimization.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Razor.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Deployment.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Razor.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\WebGrease.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\WebMatrix.Data.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\WebMatrix.WebData.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\EntityFramework.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Newtonsoft.Json.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Net.Http.Formatting.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Helpers.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.WebHost.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Mvc.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Razor.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Deployment.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.WebPages.Razor.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\WebMatrix.Data.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Web.WebPages.OAuth.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\WebMatrix.WebData.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.AspNet.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.Core.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.Consumer.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OAuth.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Web.Http.OData.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Data.Edm.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\Microsoft.Data.OData.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\System.Spatial.xml
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\de\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\es\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\fr\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\it\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ja\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ko\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ru\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\de\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\es\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\fr\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\it\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ja\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ko\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ru\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\de\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\es\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\fr\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\it\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ja\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ko\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\ru\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hans\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\bin\zh-Hant\System.Spatial.resources.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.csprojResolveAssemblyReference.cache
+d:\Dropbox\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.dll
+d:\Dropbox\ScrumPlanner\ScrumUI\obj\Debug\ScrumUI.pdb

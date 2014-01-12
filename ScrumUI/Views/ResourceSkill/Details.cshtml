@@ -1,0 +1,36 @@
+﻿@model ScrumUI.ResourceSkill
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ResourceSkill</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Skill.SkillName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Skill.SkillName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Resource.FirstName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Resource.FirstName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SkillValue)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SkillValue)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

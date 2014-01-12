@@ -1,0 +1,70 @@
+﻿@using System.Web.UI.WebControls
+@model IEnumerable<ScrumUI.UserStory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Current Sprint</h2>
+
+<p>
+@*    <input type="button" value="New User Story" onclick="location.href='@Url.Action("Create", "UserStory")    '" />*@
+     @Html.ActionLink("New User Story", "Create") 
+</p>
+<table>
+    <tr>
+        <th style="width: 25%">
+            @Html.Name("User Story")
+        </th>
+        <th style="width: 10%">
+            @Html.Name("No of tasks")
+        </th>
+        <th style="width: 10%">
+            @Html.Name("Estimation")
+        </th>
+        <th style="width: 10%">
+            @Html.Name("Possible duration")
+        </th>
+        <th style="width: 10%">
+            @Html.Name("Possible delay")
+        </th>
+        <th style="width: 30%"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        int sumOfEstimatedHours = 0;
+        int sumOfRealHours = 0;
+        foreach (var task in item.Tasks)
+        {
+            sumOfEstimatedHours += task.EstimatedHours;
+            sumOfRealHours += task.RealHours;
+        }
+        int @totalPossibleDelay = sumOfRealHours - sumOfEstimatedHours;
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tasks.Count)
+            </td>
+            <td>
+                @sumOfEstimatedHours.ToString()
+
+            </td>
+
+            <td>
+                @sumOfRealHours.ToString()
+            </td>
+            <td>
+                @totalPossibleDelay
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserStoryId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.UserStoryId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserStoryId })
+            </td>
+        </tr>
+    }
+
+</table>
