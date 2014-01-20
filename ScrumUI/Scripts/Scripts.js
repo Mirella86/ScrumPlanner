@@ -15,6 +15,24 @@ function onSelectedResourceChanged() {
     param.EstimatedHours = estimadedHours;
 
     $.ajax({
+        url: "http://localhost/ScrumUI/Task/IsAllowedToAssign/",
+        type: "POST",
+        data: JSON.stringify(param),
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            if (response == false)
+                alert("Resource has exceeded its hours capacity limit, please reassign")
+                //   $('div#realHours').text(response);
+            else getEstimate(param);
+        },
+        error: function (err) {
+            alert("error")
+        }
+    });
+}
+function getEstimate() {
+    $.ajax({
         url: "/Task/GetEstimate/",
         type: "POST",
         data: JSON.stringify(param),
@@ -24,4 +42,4 @@ function onSelectedResourceChanged() {
             $('div#realHours').text(response);
         }
     });
-}
+};

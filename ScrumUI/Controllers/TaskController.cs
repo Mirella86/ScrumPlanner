@@ -11,7 +11,7 @@ namespace ScrumUI.Controllers
     public class TaskController : Controller
     {
         private ScrumContext db = new ScrumContext();
-
+        private readonly int MAX_HOURS = 40;
         //
         // GET: /Task/
 
@@ -140,18 +140,36 @@ namespace ScrumUI.Controllers
             task.RealHours = CascadeEditHelper.RealHoursOfTaskByAssignedResource(task.Resource, task);
             return task.RealHours;
         }
-        [HttpPost   ]
+        [HttpPost]
         public JsonResult GetEstimate(TaskParam param)
         {
             int resourceID = param.ResourceID;
             int estimatedHours = param.EstimatedHours;
-            using (ScrumContext dbContext = new ScrumContext()) {
+            using (ScrumContext dbContext = new ScrumContext())
+            {
                 Resource resource = dbContext.Resources.Where(item => item.ResourceId == resourceID).Single();
 
 
                 return
                     Json(CascadeEditHelper.RealHoursOfTaskByAssignedResource(resource, new Task { EstimatedHours = estimatedHours }));
                 //, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpPost]
+        public JsonResult IsAllowedToAssign(TaskParam param)
+        {
+            int resourceId = param.ResourceID;
+            int estimatedHours = param.EstimatedHours;
+            using (ScrumContext dbContext = new ScrumContext())
+            {
+                Resource resource = dbContext.Resources.Where(item => item.ResourceId == resourceId).Single();
+                List<Task> tasks = dbContext.Tasks.Where(item => item.AssignedTo == resourceId).ToList();
+
+                int sum = tasks.Sum(item => item.EstimatedHours);
+                if (sum + estimatedHours > MAX_HOURS)
+                    return Json(false);
+                else return Json(true);
             }
         }
     }

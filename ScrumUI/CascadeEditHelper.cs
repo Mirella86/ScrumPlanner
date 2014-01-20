@@ -10,24 +10,6 @@ namespace ScrumUI
     public static class CascadeEditHelper
     {
 
-
-        //public CascadeEditHelper(Task task)
-        //{
-        //    Task = task;
-        //    if (task.Resource != null)
-        //    {
-        //        Resource = task.Resource;
-        //        ResourceSkills = task.Resource.ResourceSkills;
-        //    }
-        //}
-
-        //public CascadeEditHelper(Resource resource)
-        //{
-        //    Resource = resource;
-        //    if (resource != null)
-        //        ResourceSkills = resource.ResourceSkills;
-        //}
-
         public static decimal ResourceProductivityPercent(Resource resource)
         {
             if (resource.ResourceSkills != null)
@@ -36,8 +18,11 @@ namespace ScrumUI
                 int totalSum = 0;
                 foreach (var resourceSkill in resource.ResourceSkills)
                 {
-                    sumOfValues += resourceSkill.SkillValue * resourceSkill.Skill.SkillWeight;
-                    totalSum += resourceSkill.Skill.SkillWeight * 5; //5 is max value;
+                    if (resourceSkill.SkillValue != 0)
+                    {
+                        sumOfValues += resourceSkill.SkillValue * resourceSkill.Skill.SkillWeight;
+                        totalSum += resourceSkill.Skill.SkillWeight * 5; //5 is max value;
+                    }
                 }
 
                 using (ScrumContext dbContext = new ScrumContext())

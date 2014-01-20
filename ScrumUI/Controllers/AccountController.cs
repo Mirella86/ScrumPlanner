@@ -8,8 +8,8 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using ScrumUI.Filters;
 using ScrumUI.Models;
+using ScrumUI.Filters;
 
 namespace ScrumUI.Controllers
 {
@@ -54,7 +54,7 @@ namespace ScrumUI.Controllers
         {
             WebSecurity.Logout();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Account");
         }
 
         //

@@ -50,9 +50,19 @@ namespace ScrumUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Resources.Add(resource);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                using (ScrumContext context = new ScrumContext())
+                {
+                    context.Resources.Add(resource);
+                    List<Skill> skills = context.Skills.ToList();
+                    foreach (var skill in skills)
+                        context.ResourceSkills.Add(
+                            new ResourceSkill { 
+                                ResourceID = resource.ResourceId, 
+                                SkillID = skill.SkillID, 
+                                SkillValue = 0 });
+                    context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             return View(resource);
@@ -82,7 +92,7 @@ namespace ScrumUI.Controllers
             {
                 resource.ResourceSkills =
                     db.ResourceSkills.Where(item => item.ResourceID == resource.ResourceId).ToList();
-           //     CascadeEditHelper rhh = new CascadeEditHelper(resource);
+                //     CascadeEditHelper rhh = new CascadeEditHelper(resource);
                 resource.ProductivityIndex = CascadeEditHelper.ResourceProductivityPercent(resource);
 
                 db.Entry(resource).State = EntityState.Modified;
