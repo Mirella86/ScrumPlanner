@@ -2,27 +2,27 @@
 @using Microsoft.Ajax.Utilities
 @model IEnumerable<ScrumUI.Task>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@*<p>
+    @Html.ActionLink("Create New Task", "Create")
+</p>*@
 <table>
     <tr>
-        <th>
+        <th style="width: 35%">
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th>
-            @Html.Name("Estimated")
+        <th style="width: 10%">
+            @Html.Name("Estimated hours")
         </th>
-        <th>
+        <th style="width: 15%">
             @Html.Name("Resource")
         </th>
-        <th>
-            @Html.Name("Possible time")
+        <th style="width: 10%">
+            @Html.Name("Real hours")
         </th>
-        <th>
+        <th style="width: 10%">
             @Html.Name("Possible delay")
         </th>
-        <th></th>
+        <th style="width: 20%"></th>
     </tr>
 
     @foreach (var item in Model)
@@ -42,7 +42,7 @@
             </td>
             <td>@if (@item.Resource != null)
                 {
-                @Html.ActionLink(fullName, "Details", "Resource", new { area = "", id = item.Resource.ResourceId.ToString() }, null)
+                    @Html.ActionLink(fullName, "Details", "Resource", new { area = "", id = item.Resource.ResourceId.ToString() }, null)
                 }  </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RealHours)
@@ -52,10 +52,11 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", "Task", new { area = "", id = item.TaskId }, null) |
-            @Html.ActionLink("Details", "Details", "Task", new { area = "", id = item.TaskId }, null) |
-            @Html.ActionLink("Delete", "Delete", "Task", new { area = "", id = item.TaskId }, null)
+                @Html.ActionLink("Details", "Details", "Task", new { area = "", id = item.TaskId }, null) |
+                @Html.ActionLink("Delete", "Delete", "Task", new { area = "", id = item.TaskId }, null)
             </td>
         </tr>
     }
 
 </table>
+<br/>

@@ -429,7 +429,7 @@ label {
         display: inline;
     }
 
-input, textarea {
+input, textarea, select {
     border: 1px solid #e2e2e2;
     background: #fff;
     color: #333;
@@ -438,7 +438,9 @@ input, textarea {
     padding: 5px;
     width: 300px;
 }
-
+select {
+    width: 312px;
+}
 textarea {
     font-family: inherit;
     width: 500px;
@@ -759,3 +761,5 @@ tr.pager td {
             margin: 0;
         }
 }
+
+

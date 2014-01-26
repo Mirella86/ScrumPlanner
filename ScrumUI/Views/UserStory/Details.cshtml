@@ -5,29 +5,24 @@
 }
 
 <h2>Details</h2>
-
+<br />
 <fieldset>
     <legend>UserStory</legend>
 
     <div class="display-label">
-        @Html.LabelFor(model => model.Title)
-    </div>
-    <div class="display-field">
+        <span style="font-weight: bold">@Html.Name("Title"): </span>
         @Html.DisplayFor(model => model.Title)
     </div>
-    <br />
     <div class="display-label">
-        @Html.LabelFor(model => model.Description)
-    </div>
-    <div class="display-field">
+        <span style="font-weight: bold">@Html.Name("Description"): </span>
         @Html.DisplayFor(model => model.Description)
     </div>
-
+    <br/>
     <div class="display-label">
         @Html.Partial("_TasksForUserStory", Model.Tasks)
     </div>
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.UserStoryId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to User story list", "Index")
 </p>

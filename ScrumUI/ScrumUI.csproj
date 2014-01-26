@@ -228,6 +228,7 @@
     <Compile Include="Task.cs">
       <DependentUpon>ScrumEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="TaskPartial.cs" />
     <Compile Include="UserStory.cs">
       <DependentUpon>ScrumEntities.tt</DependentUpon>
     </Compile>

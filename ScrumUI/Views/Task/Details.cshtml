@@ -10,48 +10,40 @@
     <legend>Task</legend>
     <br />
     <div class="display-label">
-        <span style="font-weight: bold">@Html.DisplayNameFor(model => model.UserStory.Title): </span>
-        @*    </div>
-    <div class="display-field">*@
+        <span style="font-weight: bold">@Html.Name("User Story"): </span>
         @Html.DisplayFor(model => model.UserStory.Title)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
+        <span style="font-weight: bold">@Html.Name("Task name"): </span>
         @Html.DisplayFor(model => model.Title)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.Description)
-    </div>
-    <div class="display-field">
+        <span style="font-weight: bold">@Html.Name("Task description"): </span>
         @Html.DisplayFor(model => model.Description)
     </div>
 
+
+
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.EstimatedHours)
+        <span style="font-weight: bold">@Html.Name("Assigned resource"): </span>
+  @Html.ActionLink(Model.Resource.FullName, "Details", "Resource", new { area = "", id = Model.Resource.ResourceId.ToString() }, null)
+@*               
+        @Html.DisplayFor(model => model.Resource.FullName)*@
     </div>
-    <div class="display-field">
+    <br />
+    <div class="display-label">
+        <span style="font-weight: bold">@Html.Name("Estimated hours"): </span>
         @Html.DisplayFor(model => model.EstimatedHours)
     </div>
 
     <div class="display-label">
-        @Html.DisplayNameFor(model => model.Resource.FirstName)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Resource.FirstName)
-    </div>
-
-    <div class="display-label">
-        @Html.DisplayNameFor(model => model.RealHours)
-    </div>
-    <div class="display-field">
+         <span style="font-weight: bold">@Html.Name("Real hours"): </span>
         @Html.DisplayFor(model => model.RealHours)
     </div>
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.TaskId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Go to task list", "Index")
 </p>

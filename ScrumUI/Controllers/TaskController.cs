@@ -71,15 +71,49 @@ namespace ScrumUI.Controllers
         public ActionResult Edit(int id = 0)
         {
             Task task = db.Tasks.Find(id);
+
+
             if (task == null)
             {
                 return HttpNotFound();
+            }
+            else
+            {
+                task.SuggestedResourceName = GetSugestedResourceName(task.AssignedTo.GetValueOrDefault(0), task.EstimatedHours);
             }
             ViewBag.AssignedTo = new SelectList(db.Resources, "ResourceId", "FullName", task.AssignedTo);
 
 
             ViewBag.UserStoryId = new SelectList(db.UserStories, "UserStoryId", "Title", task.UserStoryId);
             return View(task);
+        }
+
+        private string GetSugestedResourceName(int resourceId, int estimatedHours)
+        {
+            Resource currentResource = db.Resources.Where(item => item.ResourceId == resourceId).Single();
+            List<Resource> resources = db.Resources.Where(item => item.ResourceId != resourceId).ToList();
+
+
+            List<Resource> availableResources = new List<Resource>();
+
+            foreach (var resource in resources)
+            {
+                List<Task> assignedTasks = db.Tasks.Where(item => item.AssignedTo == resource.ResourceId).ToList();
+                int sum = assignedTasks.Sum(item => item.EstimatedHours);
+
+                if (sum + estimatedHours <= MAX_HOURS)
+                    availableResources.Add(resource);
+            }
+
+
+            availableResources.Sort((item1, item2) => item1.ProductivityIndex.CompareTo(item2.ProductivityIndex));
+
+            if (availableResources.Last().ProductivityIndex > currentResource.ProductivityIndex)
+                return availableResources.Last().FullName;
+            else
+
+                return "No suggestion";
+
         }
 
         //
@@ -149,9 +183,13 @@ namespace ScrumUI.Controllers
             {
                 Resource resource = dbContext.Resources.Where(item => item.ResourceId == resourceID).Single();
 
+                int realHours = CascadeEditHelper.RealHoursOfTaskByAssignedResource(resource,
+                    new Task { EstimatedHours = estimatedHours });
+                string suggestedName = GetSugestedResourceName(param.ResourceID, estimatedHours);
+
 
                 return
-                    Json(CascadeEditHelper.RealHoursOfTaskByAssignedResource(resource, new Task { EstimatedHours = estimatedHours }));
+                    Json(new SuggestedResult { RealHours = realHours, SuggestedName = suggestedName });
                 //, JsonRequestBehavior.AllowGet);
             }
         }
@@ -178,5 +216,11 @@ namespace ScrumUI.Controllers
     {
         public int ResourceID { get; set; }
         public int EstimatedHours { get; set; }
+    }
+
+    public class SuggestedResult
+    {
+        public int RealHours { get; set; }
+        public string SuggestedName { get; set; }
     }
 }

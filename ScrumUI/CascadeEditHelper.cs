@@ -27,8 +27,10 @@ namespace ScrumUI
 
                 using (ScrumContext dbContext = new ScrumContext())
                 {
-                    //     var resource = dbContext.Resources.Find(Resource.ResourceId);
-                    resource.ProductivityIndex = Math.Round((decimal)sumOfValues * 100 / totalSum, 3);
+                    if (totalSum != 0)
+                        resource.ProductivityIndex = Math.Round((decimal) sumOfValues*100/totalSum, 3);
+                    else
+                        resource.ProductivityIndex = 0;
                     dbContext.SaveChanges();
                 }
                 return resource.ProductivityIndex;
@@ -60,5 +62,7 @@ namespace ScrumUI
                 dbContext.SaveChanges();
             }
         }
+
+      
     }
 }

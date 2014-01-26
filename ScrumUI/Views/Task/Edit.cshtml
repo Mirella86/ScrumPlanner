@@ -1,4 +1,5 @@
-﻿@model ScrumUI.Task
+﻿@using System.Web.Mvc.Html
+@model ScrumUI.Task
 
 @{
     ViewBag.Title = "Edit";
@@ -7,7 +8,8 @@
 <script src="~/Scripts/Scripts.js"></script>
 <h2>Edit</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -15,18 +17,18 @@
         <legend>Task</legend>
 
         @Html.HiddenFor(model => model.TaskId)
-        @Html.HiddenFor(model => model.UserStoryId);
-
+        @Html.HiddenFor(model => model.UserStoryId)
+        <br />
         <div class="editor-label">
-            @Html.LabelFor(model => model.UserStoryId, "UserStory")
+            <span style="font-weight: bold">@Html.Name("User story")</span>
         </div>
-        <div class="editor-field">
-            @Html.DisplayFor(model=> model.UserStory.Title)
+        <div class="editor-field" style="width: 200px">
+            @Html.DropDownList("UserStoryId", String.Empty)
             @Html.ValidationMessageFor(model => model.UserStoryId)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Title)
+            <span style="font-weight: bold">@Html.Name("Title")</span>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Title)
@@ -34,7 +36,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
+            <span style="font-weight: bold">@Html.Name("Description")</span>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Description)
@@ -42,7 +44,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.EstimatedHours)
+            <span style="font-weight: bold">@Html.Name("Estimated Hours")</span>
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.EstimatedHours)
@@ -50,7 +52,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.AssignedTo, "Resource")
+            <span style="font-weight: bold">@Html.Name("Resource")</span>
         </div>
         <div class="editor-field">
             @Html.DropDownList("AssignedTo", String.Empty)
@@ -58,10 +60,14 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.RealHours)
+            <span style="font-weight: bold">@Html.Name("Real hours"):</span>
+
+            <p id="realHours">@Html.DisplayFor(model => model.RealHours)</p>
         </div>
-        <div class="editor-field" id="realHours">
-            @Html.DisplayFor(model => model.RealHours)
+
+        <div class="editor-label">
+            <span style="font-weight: bold">@Html.Name("Suggested"):</span>
+            <p id="suggestedName">@Html.DisplayFor(model => model.SuggestedResourceName)</p>
         </div>
 
         <p>
