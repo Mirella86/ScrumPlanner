@@ -349,23 +349,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
-    <EntityDeploy Include="ScrumEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ScrumEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ScrumEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ScrumEntities.edmx</DependentUpon>
-      <LastGenOutput>ScrumEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ScrumEntities.edmx.diagram">
-      <DependentUpon>ScrumEntities.edmx</DependentUpon>
-    </Content>
-    <Content Include="ScrumEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ScrumEntities.edmx</DependentUpon>
-      <LastGenOutput>ScrumEntities.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\Resource\Index.cshtml" />
     <Content Include="Views\Resource\Details.cshtml" />
     <Content Include="Views\Resource\Create.cshtml" />
@@ -394,6 +377,23 @@
     <Content Include="Views\Shared\_TasksForUserStory.cshtml" />
     <Content Include="Views\Shared\_TaskForResource.cshtml" />
     <Content Include="Views\Shared\_ResourceSkillsForResource.cshtml" />
+    <EntityDeploy Include="ScrumEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ScrumEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ScrumEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScrumEntities.edmx</DependentUpon>
+      <LastGenOutput>ScrumEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ScrumEntities.edmx.diagram">
+      <DependentUpon>ScrumEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="ScrumEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScrumEntities.edmx</DependentUpon>
+      <LastGenOutput>ScrumEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

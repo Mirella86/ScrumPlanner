@@ -3,18 +3,23 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/Scripts.js"></script>
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("New Task", "Create")
+</p>
+<br />
+<p>
+    <button onclick="autoassignTasks()">Autoassign tasks</button>
 </p>
 <table>
     <tr>
         <th style="width: 30%">
             @Html.DisplayNameFor(model => model.Title)
         </th>
-        <th style="width:10%">
+        <th style="width: 10%">
             @Html.Name("Estimated")
         </th>
         <th style="width: 15%">
@@ -29,41 +34,45 @@
         <th style="width: 30%"></th>
     </tr>
 
-@foreach (var item in Model) {
-    var fullName = string.Empty;
-    if (@item.Resource != null)
+    @foreach (var item in Model)
     {
-        fullName = item.Resource.FirstName + " " + item.Resource.LastName;
+        var fullName = string.Empty;
+        if (@item.Resource != null)
+        {
+            fullName = item.Resource.FirstName + " " + item.Resource.LastName;
 
+        }
+
+        var possibleDelay = item.RealHours - item.EstimatedHours;
+        if (possibleDelay < 0)
+        { possibleDelay = 0; }
+     
+        @Html.HiddenFor(modelItem => item.Resource.ResourceId)
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstimatedHours)
+            </td>
+            <td>
+                @if (@item.Resource != null)
+                {
+                    @Html.ActionLink(fullName, "Details", "Resource", new { area = "", id = item.Resource.ResourceId.ToString() }, null)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RealHours)
+            </td>
+            <td>
+                @possibleDelay
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TaskId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.TaskId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.TaskId })
+            </td>
+        </tr>
     }
-    var possibleDelay = item.RealHours - item.EstimatedHours;
-    
-        @Html.HiddenFor(modelItem=>item.Resource.ResourceId)
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstimatedHours)
-        </td>
-        <td>
-            @if (@item.Resource != null)
-            {
-                @Html.ActionLink(fullName, "Details", "Resource", new {area = "", id = item.Resource.ResourceId.ToString()}, null)
-            }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RealHours)
-        </td>
-        <td>
-            @possibleDelay
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TaskId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TaskId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TaskId })
-        </td>
-    </tr>
-}
 
 </table>

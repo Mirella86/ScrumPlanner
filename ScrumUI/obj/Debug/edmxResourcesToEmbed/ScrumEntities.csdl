@@ -9,7 +9,7 @@
     <EntitySet Name="UserStories" EntityType="ScrumModel.UserStory" />
     <AssociationSet Name="FK_ResourceSkills_Resource" Association="ScrumModel.FK_ResourceSkills_Resource">
       <End Role="Resource" EntitySet="Resources" />
-      <End Role="ResourceSkill" EntitySet="ResourceSkills" />
+      <End Role="ResourceSkills" EntitySet="ResourceSkills" />
     </AssociationSet>
     <AssociationSet Name="FK_Task_Resource" Association="ScrumModel.FK_Task_Resource">
       <End Role="Resource" EntitySet="Resources" />
@@ -17,7 +17,7 @@
     </AssociationSet>
     <AssociationSet Name="FK_ResourceSkills_Skill" Association="ScrumModel.FK_ResourceSkills_Skill">
       <End Role="Skill" EntitySet="Skills" />
-      <End Role="ResourceSkill" EntitySet="ResourceSkills" />
+      <End Role="ResourceSkills" EntitySet="ResourceSkills" />
     </AssociationSet>
     <AssociationSet Name="FK_Task_UserStory" Association="ScrumModel.FK_Task_UserStory">
       <End Role="UserStory" EntitySet="UserStories" />
@@ -28,54 +28,54 @@
     <Key>
       <PropertyRef Name="ResourceId" />
     </Key>
-    <Property Type="Int32" Name="ResourceId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="FirstName" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Type="String" Name="LastName" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="ResourceSkills" Relationship="ScrumModel.FK_ResourceSkills_Resource" FromRole="Resource" ToRole="ResourceSkill" />
+    <Property Name="ResourceId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ProductivityIndex" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+    <NavigationProperty Name="ResourceSkills" Relationship="ScrumModel.FK_ResourceSkills_Resource" FromRole="Resource" ToRole="ResourceSkills" />
     <NavigationProperty Name="Tasks" Relationship="ScrumModel.FK_Task_Resource" FromRole="Resource" ToRole="Task" />
-    <Property Type="Decimal" Name="ProductivityIndex" Precision="18" Scale="3" Nullable="false" />
   </EntityType>
   <EntityType Name="ResourceSkill">
     <Key>
       <PropertyRef Name="ResourceSkillID" />
     </Key>
-    <Property Type="Int32" Name="ResourceSkillID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="SkillID" Nullable="false" />
-    <Property Type="Int32" Name="ResourceID" Nullable="false" />
-    <Property Type="Int32" Name="SkillValue" Nullable="false" />
-    <NavigationProperty Name="Resource" Relationship="ScrumModel.FK_ResourceSkills_Resource" FromRole="ResourceSkill" ToRole="Resource" />
-    <NavigationProperty Name="Skill" Relationship="ScrumModel.FK_ResourceSkills_Skill" FromRole="ResourceSkill" ToRole="Skill" />
+    <Property Name="ResourceSkillID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillID" Type="Int32" Nullable="false" />
+    <Property Name="ResourceID" Type="Int32" Nullable="false" />
+    <Property Name="SkillValue" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Resource" Relationship="ScrumModel.FK_ResourceSkills_Resource" FromRole="ResourceSkills" ToRole="Resource" />
+    <NavigationProperty Name="Skill" Relationship="ScrumModel.FK_ResourceSkills_Skill" FromRole="ResourceSkills" ToRole="Skill" />
   </EntityType>
   <EntityType Name="Skill">
     <Key>
       <PropertyRef Name="SkillID" />
     </Key>
-    <Property Type="Int32" Name="SkillID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="SkillName" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Type="Int32" Name="SkillWeight" Nullable="false" />
-    <NavigationProperty Name="ResourceSkills" Relationship="ScrumModel.FK_ResourceSkills_Skill" FromRole="Skill" ToRole="ResourceSkill" />
+    <Property Name="SkillID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SkillWeight" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ResourceSkills" Relationship="ScrumModel.FK_ResourceSkills_Skill" FromRole="Skill" ToRole="ResourceSkills" />
   </EntityType>
   <EntityType Name="sysdiagram">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="principal_id" Nullable="false" />
-    <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="version" />
-    <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Task">
     <Key>
       <PropertyRef Name="TaskId" />
     </Key>
-    <Property Type="Int32" Name="TaskId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="Int32" Name="UserStoryId" Nullable="false" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Type="Int32" Name="EstimatedHours" Nullable="false" />
-    <Property Type="Int32" Name="AssignedTo" />
-    <Property Type="Int32" Name="RealHours" Nullable="false" />
+    <Property Name="TaskId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="UserStoryId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="EstimatedHours" Type="Int32" Nullable="false" />
+    <Property Name="AssignedTo" Type="Int32" />
+    <Property Name="RealHours" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Resource" Relationship="ScrumModel.FK_Task_Resource" FromRole="Task" ToRole="Resource" />
     <NavigationProperty Name="UserStory" Relationship="ScrumModel.FK_Task_UserStory" FromRole="Task" ToRole="UserStory" />
   </EntityType>
@@ -83,26 +83,26 @@
     <Key>
       <PropertyRef Name="UserStoryId" />
     </Key>
-    <Property Type="Int32" Name="UserStoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserStoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Tasks" Relationship="ScrumModel.FK_Task_UserStory" FromRole="UserStory" ToRole="Task" />
   </EntityType>
   <Association Name="FK_ResourceSkills_Resource">
-    <End Type="ScrumModel.Resource" Role="Resource" Multiplicity="1" />
-    <End Type="ScrumModel.ResourceSkill" Role="ResourceSkill" Multiplicity="*" />
+    <End Role="Resource" Type="ScrumModel.Resource" Multiplicity="1" />
+    <End Role="ResourceSkills" Type="ScrumModel.ResourceSkill" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Resource">
         <PropertyRef Name="ResourceId" />
       </Principal>
-      <Dependent Role="ResourceSkill">
+      <Dependent Role="ResourceSkills">
         <PropertyRef Name="ResourceID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Task_Resource">
-    <End Type="ScrumModel.Resource" Role="Resource" Multiplicity="0..1" />
-    <End Type="ScrumModel.Task" Role="Task" Multiplicity="*" />
+    <End Role="Resource" Type="ScrumModel.Resource" Multiplicity="0..1" />
+    <End Role="Task" Type="ScrumModel.Task" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Resource">
         <PropertyRef Name="ResourceId" />
@@ -113,20 +113,20 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ResourceSkills_Skill">
-    <End Type="ScrumModel.Skill" Role="Skill" Multiplicity="1" />
-    <End Type="ScrumModel.ResourceSkill" Role="ResourceSkill" Multiplicity="*" />
+    <End Role="Skill" Type="ScrumModel.Skill" Multiplicity="1" />
+    <End Role="ResourceSkills" Type="ScrumModel.ResourceSkill" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Skill">
         <PropertyRef Name="SkillID" />
       </Principal>
-      <Dependent Role="ResourceSkill">
+      <Dependent Role="ResourceSkills">
         <PropertyRef Name="SkillID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Task_UserStory">
-    <End Type="ScrumModel.UserStory" Role="UserStory" Multiplicity="1" />
-    <End Type="ScrumModel.Task" Role="Task" Multiplicity="*" />
+    <End Role="UserStory" Type="ScrumModel.UserStory" Multiplicity="1" />
+    <End Role="Task" Type="ScrumModel.Task" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="UserStory">
         <PropertyRef Name="UserStoryId" />

@@ -52,15 +52,6 @@
             @Html.DropDownList("AssignedTo", String.Empty)
             @Html.ValidationMessageFor(model => model.AssignedTo)
         </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.RealHours)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.RealHours)
-            @Html.ValidationMessageFor(model => model.RealHours)
-        </div>
-
         <p>
             <input type="submit" value="Create" />
         </p>

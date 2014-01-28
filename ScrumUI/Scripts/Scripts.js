@@ -47,3 +47,22 @@ function getEstimate(param) {
         }
     });
 };
+
+
+function autoassignTasks() {
+    var dialog = confirm("This will overwrite all tasks assignments! Changes cannot be reverted. Are you sure you want to proceed? ");
+    if (dialog == true) {
+        $.ajax({
+            url: "http://localhost/ScrumUI/Task/AutoAssignTasks/",
+            type: "GET",
+
+            contentType: "application/json; charset=utf-8",
+            success: function (response) {
+                alert("AutoAssignment completed succesfully");
+            },
+            error: function (response) {
+                alert("Task total hours are bigger than resources total capacity. Unable to assign!");
+            }
+        });
+    }
+};

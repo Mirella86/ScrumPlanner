@@ -11,14 +11,16 @@ namespace ScrumUI.Controllers
     public class TaskController : Controller
     {
         private ScrumContext db = new ScrumContext();
-        private readonly int MAX_HOURS = 40;
+        private readonly int MAX_HOURS = 30;
         //
         // GET: /Task/
 
         public ActionResult Index()
         {
+
             var tasks = db.Tasks.Include(t => t.Resource).Include(t => t.UserStory);
             return View(tasks.ToList());
+
         }
 
         //
@@ -26,12 +28,14 @@ namespace ScrumUI.Controllers
 
         public ActionResult Details(int id = 0)
         {
+
             Task task = db.Tasks.Find(id);
             if (task == null)
             {
                 return HttpNotFound();
             }
             return View(task);
+
         }
 
         //
@@ -39,9 +43,11 @@ namespace ScrumUI.Controllers
 
         public ActionResult Create()
         {
+
             ViewBag.AssignedTo = new SelectList(db.Resources, "ResourceId", "FirstName");
             ViewBag.UserStoryId = new SelectList(db.UserStories, "UserStoryId", "Title");
             return View();
+
         }
 
         //
@@ -51,10 +57,14 @@ namespace ScrumUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Task task)
         {
+
             if (ModelState.IsValid)
             {
-                EstimateTask(task);
-
+                if (task.Resource != null)
+                {
+                    EstimateTask(task);
+                }
+                else task.RealHours = task.EstimatedHours;
                 db.Tasks.Add(task);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -63,6 +73,7 @@ namespace ScrumUI.Controllers
             ViewBag.AssignedTo = new SelectList(db.Resources, "ResourceId", "FirstName", task.AssignedTo);
             ViewBag.UserStoryId = new SelectList(db.UserStories, "UserStoryId", "Title", task.UserStoryId);
             return View(task);
+
         }
 
         //
@@ -70,6 +81,7 @@ namespace ScrumUI.Controllers
 
         public ActionResult Edit(int id = 0)
         {
+
             Task task = db.Tasks.Find(id);
 
 
@@ -79,40 +91,48 @@ namespace ScrumUI.Controllers
             }
             else
             {
-                task.SuggestedResourceName = GetSugestedResourceName(task.AssignedTo.GetValueOrDefault(0), task.EstimatedHours);
+                task.SuggestedResourceName = GetSugestedResourceName(task.AssignedTo.GetValueOrDefault(0),
+                    task.EstimatedHours);
             }
             ViewBag.AssignedTo = new SelectList(db.Resources, "ResourceId", "FullName", task.AssignedTo);
 
 
             ViewBag.UserStoryId = new SelectList(db.UserStories, "UserStoryId", "Title", task.UserStoryId);
             return View(task);
+
         }
 
         private string GetSugestedResourceName(int resourceId, int estimatedHours)
         {
-            Resource currentResource = db.Resources.Where(item => item.ResourceId == resourceId).Single();
-            List<Resource> resources = db.Resources.Where(item => item.ResourceId != resourceId).ToList();
 
-
-            List<Resource> availableResources = new List<Resource>();
-
-            foreach (var resource in resources)
+            if (resourceId != 0)
             {
-                List<Task> assignedTasks = db.Tasks.Where(item => item.AssignedTo == resource.ResourceId).ToList();
-                int sum = assignedTasks.Sum(item => item.EstimatedHours);
+                Resource currentResource = db.Resources.Where(item => item.ResourceId == resourceId).Single();
+                List<Resource> resources = db.Resources.Where(item => item.ResourceId != resourceId).ToList();
 
-                if (sum + estimatedHours <= MAX_HOURS)
-                    availableResources.Add(resource);
+
+                List<Resource> availableResources = new List<Resource>();
+
+                foreach (var resource in resources)
+                {
+                    List<Task> assignedTasks =
+                        db.Tasks.Where(item => item.AssignedTo == resource.ResourceId).ToList();
+                    int sum = assignedTasks.Sum(item => item.EstimatedHours);
+
+                    if (sum + estimatedHours <= MAX_HOURS)
+                        availableResources.Add(resource);
+                }
+
+
+                availableResources.Sort((item1, item2) => item1.ProductivityIndex.CompareTo(item2.ProductivityIndex));
+
+                if (availableResources.Any() &&
+                    availableResources.Last().ProductivityIndex > currentResource.ProductivityIndex)
+                    return availableResources.Last().FullName;
+                else
+                    return "No suggestion";
             }
-
-
-            availableResources.Sort((item1, item2) => item1.ProductivityIndex.CompareTo(item2.ProductivityIndex));
-
-            if (availableResources.Last().ProductivityIndex > currentResource.ProductivityIndex)
-                return availableResources.Last().FullName;
-            else
-
-                return "No suggestion";
+            return "No suggestion";
 
         }
 
@@ -123,10 +143,18 @@ namespace ScrumUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Task task)
         {
+
             if (ModelState.IsValid)
             {
-                task.Resource = db.Resources.Where(item => item.ResourceId == task.AssignedTo).FirstOrDefault();
-                EstimateTask(task);
+                if (task.Resource != null)
+                {
+                    task.Resource = db.Resources.Where(item => item.ResourceId == task.AssignedTo).FirstOrDefault();
+                    EstimateTask(task);
+                }
+                else
+                {
+                    task.RealHours = task.EstimatedHours;
+                }
                 db.Entry(task).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -134,6 +162,7 @@ namespace ScrumUI.Controllers
             ViewBag.AssignedTo = new SelectList(db.Resources, "ResourceId", "FirstName", task.AssignedTo);
             ViewBag.UserStoryId = new SelectList(db.UserStories, "UserStoryId", "Title", task.UserStoryId);
             return View(task);
+
         }
 
         //
@@ -147,6 +176,7 @@ namespace ScrumUI.Controllers
                 return HttpNotFound();
             }
             return View(task);
+
         }
 
         //
@@ -156,16 +186,20 @@ namespace ScrumUI.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+
             Task task = db.Tasks.Find(id);
             db.Tasks.Remove(task);
             db.SaveChanges();
             return RedirectToAction("Index");
+
         }
 
         protected override void Dispose(bool disposing)
         {
+
             db.Dispose();
             base.Dispose(disposing);
+
         }
 
         private int EstimateTask(Task task)
@@ -174,6 +208,7 @@ namespace ScrumUI.Controllers
             task.RealHours = CascadeEditHelper.RealHoursOfTaskByAssignedResource(task.Resource, task);
             return task.RealHours;
         }
+
         [HttpPost]
         public JsonResult GetEstimate(TaskParam param)
         {
@@ -197,18 +232,104 @@ namespace ScrumUI.Controllers
         [HttpPost]
         public JsonResult IsAllowedToAssign(TaskParam param)
         {
-            int resourceId = param.ResourceID;
-            int estimatedHours = param.EstimatedHours;
+            if (param.ResourceID != 0)
+            {
+
+                int resourceId = param.ResourceID;
+                int estimatedHours = param.EstimatedHours;
+                using (ScrumContext dbContext = new ScrumContext())
+                {
+                    Resource resource = dbContext.Resources.Where(item => item.ResourceId == resourceId).Single();
+                    List<Task> tasks = dbContext.Tasks.Where(item => item.AssignedTo == resourceId).ToList();
+
+                    int sum = tasks.Sum(item => item.EstimatedHours);
+                    if (sum + estimatedHours > MAX_HOURS)
+                        return Json(false);
+                    else return Json(true);
+                }
+            }
+            else return Json(true);
+        }
+
+
+        [HttpGet]
+        public ActionResult AutoAssignTasks()
+        {
+            Dictionary<int, int> Solution;
             using (ScrumContext dbContext = new ScrumContext())
             {
-                Resource resource = dbContext.Resources.Where(item => item.ResourceId == resourceId).Single();
-                List<Task> tasks = dbContext.Tasks.Where(item => item.AssignedTo == resourceId).ToList();
+                List<Task> allTasksList = dbContext.Tasks.ToList();
+                List<Resource> allResourcesList = dbContext.Resources.ToList();
 
-                int sum = tasks.Sum(item => item.EstimatedHours);
-                if (sum + estimatedHours > MAX_HOURS)
-                    return Json(false);
-                else return Json(true);
+                if (allTasksList.Sum(item => item.EstimatedHours) > MAX_HOURS * (allResourcesList.Count() + 1))
+                    throw new Exception("Auto assigner overflow");
+
+
+                Solution = new Dictionary<int, int>();
+                //add AsssignedTo as 0 for the moment
+                foreach (var task in allTasksList)
+                {
+                    Solution.Add(task.TaskId, 0);
+                }
+
+                allTasksList = allTasksList.OrderByDescending(item => item.EstimatedHours).ToList();
+                allResourcesList = allResourcesList.OrderByDescending(item => item.ProductivityIndex).ToList();
+
+                foreach (var task in allTasksList)
+                {
+                    foreach (var resource in allResourcesList)
+                    {
+                        int assignedHours = GetTotalAssignedHoursForResource(resource.ResourceId, Solution, allTasksList);
+                        if (assignedHours + task.EstimatedHours <= MAX_HOURS)
+                        {
+                            Resource res =
+                                allResourcesList.SingleOrDefault(item => item.ResourceId == Solution[task.TaskId]);
+
+                            if (res == null || (res.ProductivityIndex < resource.ProductivityIndex))
+                            {
+                                Solution[task.TaskId] = resource.ResourceId;
+                                break;
+                            }
+
+                        }
+                    }
+                }
             }
+
+            using (ScrumContext dbContext = new ScrumContext())
+            {
+                int unassigned = Solution.Count(item => item.Value == 0);
+                if (unassigned > 0)
+                    throw new Exception("Unable to assign all tasks, please assign manually ");
+                else
+                {
+                    foreach (var taskId in Solution.Keys)
+                    {
+                        Task task = dbContext.Tasks.Find(taskId);
+                        task.AssignedTo = Solution[taskId];
+                        dbContext.Entry(task).State = EntityState.Modified;
+                        dbContext.SaveChanges();
+
+                    }
+                }
+            }
+
+            return View("Index", db.Tasks.ToList());
+        }
+
+        private int GetTotalAssignedHoursForResource(int resourceId, Dictionary<int, int> solution, List<Task> taskList)
+        {
+            int sum = 0;
+            foreach (var key in solution.Keys)
+            {
+                if (solution[key] == resourceId)
+                {
+                    Task task = taskList.Single(item => item.TaskId == key);
+                    sum += task.EstimatedHours;
+                }
+            }
+
+            return sum;
         }
     }
 
