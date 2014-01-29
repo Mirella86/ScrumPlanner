@@ -40,7 +40,11 @@ namespace ScrumUI
 
         public static int RealHoursOfTaskByAssignedResource(Resource resource, Task task)
         {
-            return Convert.ToInt32(task.EstimatedHours + task.EstimatedHours * (1 - ResourceProductivityPercent(resource) / 100));
+            if (resource != null)
+                return
+                    Convert.ToInt32(task.EstimatedHours +
+                                    task.EstimatedHours*(1 - ResourceProductivityPercent(resource)/100));
+            else return task.EstimatedHours;
         }
 
         //when modifying Resource Skills value

@@ -104,35 +104,40 @@ namespace ScrumUI.Controllers
 
         private string GetSugestedResourceName(int resourceId, int estimatedHours)
         {
-
+            Resource currentResource = null;
             if (resourceId != 0)
+                currentResource = db.Resources.Where(item => item.ResourceId == resourceId).Single();
+
+            List<Resource> resources = db.Resources.Where(item => item.ResourceId != resourceId).ToList();
+
+
+            List<Resource> availableResources = new List<Resource>();
+
+            foreach (var resource in resources)
             {
-                Resource currentResource = db.Resources.Where(item => item.ResourceId == resourceId).Single();
-                List<Resource> resources = db.Resources.Where(item => item.ResourceId != resourceId).ToList();
+                List<Task> assignedTasks =
+                    db.Tasks.Where(item => item.AssignedTo == resource.ResourceId).ToList();
+                int sum = assignedTasks.Sum(item => item.EstimatedHours);
+
+                if (sum + estimatedHours <= MAX_HOURS)
+                    availableResources.Add(resource);
+            }
 
 
-                List<Resource> availableResources = new List<Resource>();
+            availableResources.Sort((item1, item2) => item1.ProductivityIndex.CompareTo(item2.ProductivityIndex));
 
-                foreach (var resource in resources)
-                {
-                    List<Task> assignedTasks =
-                        db.Tasks.Where(item => item.AssignedTo == resource.ResourceId).ToList();
-                    int sum = assignedTasks.Sum(item => item.EstimatedHours);
-
-                    if (sum + estimatedHours <= MAX_HOURS)
-                        availableResources.Add(resource);
-                }
-
-
-                availableResources.Sort((item1, item2) => item1.ProductivityIndex.CompareTo(item2.ProductivityIndex));
-
-                if (availableResources.Any() &&
-                    availableResources.Last().ProductivityIndex > currentResource.ProductivityIndex)
+            if (availableResources.Any())
+            {
+                if (currentResource == null || availableResources.Last().ProductivityIndex > currentResource.ProductivityIndex)
                     return availableResources.Last().FullName;
                 else
                     return "No suggestion";
+
             }
-            return "No suggestion";
+            else
+                return "No suggestion";
+
+            //      return "No suggestion";
 
         }
 
@@ -214,9 +219,10 @@ namespace ScrumUI.Controllers
         {
             int resourceID = param.ResourceID;
             int estimatedHours = param.EstimatedHours;
+
             using (ScrumContext dbContext = new ScrumContext())
             {
-                Resource resource = dbContext.Resources.Where(item => item.ResourceId == resourceID).Single();
+                Resource resource = dbContext.Resources.SingleOrDefault(item => item.ResourceId == resourceID);
 
                 int realHours = CascadeEditHelper.RealHoursOfTaskByAssignedResource(resource,
                     new Task { EstimatedHours = estimatedHours });
@@ -227,6 +233,7 @@ namespace ScrumUI.Controllers
                     Json(new SuggestedResult { RealHours = realHours, SuggestedName = suggestedName });
                 //, JsonRequestBehavior.AllowGet);
             }
+
         }
 
         [HttpPost]
@@ -307,6 +314,9 @@ namespace ScrumUI.Controllers
                     {
                         Task task = dbContext.Tasks.Find(taskId);
                         task.AssignedTo = Solution[taskId];
+                        Resource resource = dbContext.Resources.Find(task.AssignedTo);
+                        task.Resource = resource;
+                        EstimateTask(task);
                         dbContext.Entry(task).State = EntityState.Modified;
                         dbContext.SaveChanges();
 

@@ -24,10 +24,11 @@ function onSelectedResourceChanged() {
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
         success: function (response) {
-            if (response == false)
-                alert("Resource has exceeded its hours capacity limit, please reassign")
-                //   $('div#realHours').text(response);
-            else getEstimate(param);
+            if (response == false) {
+
+                alert("Resource has exceeded its hours capacity limit, please reassign");
+                $('#AssignedTo').val("");
+            } else getEstimate(param);
         },
         error: function (err) {
             alert("error");
@@ -59,6 +60,7 @@ function autoassignTasks() {
             contentType: "application/json; charset=utf-8",
             success: function (response) {
                 alert("AutoAssignment completed succesfully");
+                window.location.reload();
             },
             error: function (response) {
                 alert("Task total hours are bigger than resources total capacity. Unable to assign!");
