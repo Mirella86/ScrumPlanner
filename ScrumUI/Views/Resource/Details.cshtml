@@ -10,18 +10,10 @@
     <legend>Resource</legend>
     <br />
     <div class="display-label">
-        @Html.Label("First Name")
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FirstName)
+        <span style="font-weight: bold; font-size:large"> @Html.Name("Name"): </span>     
+        @Html.DisplayFor(model => model.FullName)
     </div>
 
-    <div class="display-label">
-        @Html.Label("Last Name")
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LastName)
-    </div>
     <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ResourceId }) 
 @*    @Html.ActionLink("Back to List", "Index")*@

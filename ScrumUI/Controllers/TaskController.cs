@@ -106,7 +106,7 @@ namespace ScrumUI.Controllers
         {
             Resource currentResource = null;
             if (resourceId != 0)
-                currentResource = db.Resources.Where(item => item.ResourceId == resourceId).Single();
+                currentResource = db.Resources.Single(item => item.ResourceId == resourceId);
 
             List<Resource> resources = db.Resources.Where(item => item.ResourceId != resourceId).ToList();
 
