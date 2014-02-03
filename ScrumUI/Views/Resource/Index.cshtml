@@ -20,26 +20,33 @@
         <th style="width: 20%">
             @Html.Name("Productivity index")
         </th>
+        <th style="width: 20%">
+            @Html.Name("Assigned hours")
+        </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductivityIndex) %
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ResourceId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ResourceId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ResourceId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductivityIndex) %
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedHours)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ResourceId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ResourceId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ResourceId })
+            </td>
+        </tr>
+    }
 
 </table>

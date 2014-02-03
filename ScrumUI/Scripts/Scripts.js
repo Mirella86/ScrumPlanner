@@ -13,9 +13,12 @@ function TaskParam(resourceID, estimatedHours) {
 function onSelectedResourceChanged() {
     var idResource = $('#AssignedTo option:selected').val();
     var estimadedHours = $('#EstimatedHours').val();
+    var taskId = $('#TaskId').val();
+    
     var param = new TaskParam();
     param.ResourceID = idResource;
     param.EstimatedHours = estimadedHours;
+    param.TaskId = taskId;
 
     $.ajax({
         url: "http://localhost/ScrumUI/Task/IsAllowedToAssign/",

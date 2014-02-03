@@ -8,8 +8,8 @@
 <h2>Current Sprint</h2>
 
 <p>
-@*    <input type="button" value="New User Story" onclick="location.href='@Url.Action("Create", "UserStory")    '" />*@
-     @Html.ActionLink("New User Story", "Create") 
+    @*    <input type="button" value="New User Story" onclick="location.href='@Url.Action("Create", "UserStory")    '" />*@
+    @Html.ActionLink("New User Story", "Create")
 </p>
 <table>
     <tr>
@@ -30,40 +30,58 @@
         </th>
         <th style="width: 30%"></th>
     </tr>
+    @{
+        int totalDelay = 0;
+        int totalRealHours = 0;
+        int totalEstimatedHours = 0;
 
-    @foreach (var item in Model)
-    {
-        int sumOfEstimatedHours = 0;
-        int sumOfRealHours = 0;
-        foreach (var task in item.Tasks)
+
+        foreach (var item in Model)
         {
-            sumOfEstimatedHours += task.EstimatedHours;
-            sumOfRealHours += task.RealHours;
-        }
-        int @totalPossibleDelay = sumOfRealHours - sumOfEstimatedHours;
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
+            int sumOfEstimatedHours = 0;
+            int sumOfRealHours = 0;
+            foreach (var task in item.Tasks)
+            {
+                sumOfEstimatedHours += task.EstimatedHours;
+                sumOfRealHours += task.RealHours;
+            }
+            int @totalPossibleDelay = sumOfRealHours - sumOfEstimatedHours;
+
+            totalDelay += totalPossibleDelay;
+            totalRealHours += sumOfRealHours;
+            totalEstimatedHours += sumOfEstimatedHours;
+<tr>
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tasks.Count)
+                 <td>
+                     @Html.DisplayFor(modelItem => item.Tasks.Count)
             </td>
-            <td>
-                @sumOfEstimatedHours.ToString()
+                 <td>
+                     @sumOfEstimatedHours.ToString()
 
             </td>
 
-            <td>
-                @sumOfRealHours.ToString()
+                 <td>
+                     @sumOfRealHours.ToString()
             </td>
-            <td>
-                @totalPossibleDelay
+                 <td>
+                     @totalPossibleDelay
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.UserStoryId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.UserStoryId }) @*|
+                 <td>
+                     @Html.ActionLink("Edit", "Edit", new { id = item.UserStoryId }) |
+                     @Html.ActionLink("Details", "Details", new { id = item.UserStoryId }) @*|
                 @Html.ActionLink("Delete", "Delete", new { id = item.UserStoryId })*@
-            </td>
+        </td>
+             </tr>
+        }
+        <tr></tr>
+        <tr style="font-weight: bold; font-size: large">
+            <td>Total:</td>
+            <td></td>
+            <td>@totalEstimatedHours</td>
+            <td>@totalRealHours</td>
+            <td>@totalDelay</td>
         </tr>
     }
 

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d8855c2661e84dc6ace5b6fa04174870" Name="Diagram1">
+      <Diagram DiagramId="b757b29828f84be9939b347146608cb6" Name="Diagram1">
         <EntityTypeShape EntityType="ScrumModel.Resource" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ScrumModel.ResourceSkill" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ScrumModel.Skill" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />

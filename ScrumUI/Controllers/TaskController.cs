@@ -11,7 +11,7 @@ namespace ScrumUI.Controllers
     public class TaskController : Controller
     {
         private ScrumContext db = new ScrumContext();
-        private readonly int MAX_HOURS = 30;
+        private readonly int MAX_HOURS = 20;
         //
         // GET: /Task/
 
@@ -92,7 +92,7 @@ namespace ScrumUI.Controllers
             else
             {
                 task.SuggestedResourceName = GetSugestedResourceName(task.AssignedTo.GetValueOrDefault(0),
-                    task.EstimatedHours);
+                    task.EstimatedHours, task.TaskId);
             }
             ViewBag.AssignedTo = new SelectList(db.Resources, "ResourceId", "FullName", task.AssignedTo);
 
@@ -102,7 +102,7 @@ namespace ScrumUI.Controllers
 
         }
 
-        private string GetSugestedResourceName(int resourceId, int estimatedHours)
+        private string GetSugestedResourceName(int resourceId, int estimatedHours, int currentTaskId)
         {
             Resource currentResource = null;
             if (resourceId != 0)
@@ -116,7 +116,7 @@ namespace ScrumUI.Controllers
             foreach (var resource in resources)
             {
                 List<Task> assignedTasks =
-                    db.Tasks.Where(item => item.AssignedTo == resource.ResourceId).ToList();
+                    db.Tasks.Where(item => item.AssignedTo == resource.ResourceId && item.TaskId != currentTaskId).ToList();
                 int sum = assignedTasks.Sum(item => item.EstimatedHours);
 
                 if (sum + estimatedHours <= MAX_HOURS)
@@ -151,7 +151,7 @@ namespace ScrumUI.Controllers
 
             if (ModelState.IsValid)
             {
-                if (task.Resource != null)
+                if (task.AssignedTo != 0)
                 {
                     task.Resource = db.Resources.Where(item => item.ResourceId == task.AssignedTo).FirstOrDefault();
                     EstimateTask(task);
@@ -226,7 +226,7 @@ namespace ScrumUI.Controllers
 
                 int realHours = CascadeEditHelper.RealHoursOfTaskByAssignedResource(resource,
                     new Task { EstimatedHours = estimatedHours });
-                string suggestedName = GetSugestedResourceName(param.ResourceID, estimatedHours);
+                string suggestedName = GetSugestedResourceName(param.ResourceID, estimatedHours, param.TaskId);
 
 
                 return
@@ -247,7 +247,7 @@ namespace ScrumUI.Controllers
                 using (ScrumContext dbContext = new ScrumContext())
                 {
                     Resource resource = dbContext.Resources.Where(item => item.ResourceId == resourceId).Single();
-                    List<Task> tasks = dbContext.Tasks.Where(item => item.AssignedTo == resourceId).ToList();
+                    List<Task> tasks = dbContext.Tasks.Where(item => item.AssignedTo == resourceId && item.TaskId != param.TaskId).ToList();
 
                     int sum = tasks.Sum(item => item.EstimatedHours);
                     if (sum + estimatedHours > MAX_HOURS)
@@ -347,6 +347,8 @@ namespace ScrumUI.Controllers
     {
         public int ResourceID { get; set; }
         public int EstimatedHours { get; set; }
+        public int TaskId { get; set; }
+
     }
 
     public class SuggestedResult
